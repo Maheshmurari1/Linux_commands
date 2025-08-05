@@ -1,0 +1,68 @@
+===========================
+
+NSLOOKUP
+
+===========================
+
+
+
+The nslookup command is a network administration tool used to query the Domain Name System (DNS) and obtain information about domain names, IP address mappings, and specific DNS records. It is commonly used for network troubleshooting and diagnostics.
+What You Can Do with nslookup:
+
+    Find the IP Address of a Domain:
+    Example:
+
+bash
+nslookup google.com
+
+This command will return the IP address(es) associated with google.com.
+
+Reverse DNS Lookup (Find Domain from IP):
+Example:
+
+bash
+nslookup 8.8.8.8
+
+This will try to resolve the domain name for the IP address 8.8.8.8.
+
+Check Different DNS Record Types:
+You can specify the type of DNS record you want to look up (e.g., A, NS, MX, SOA, TXT):
+
+    NS (Name Server):
+
+bash
+nslookup -type=ns example.com
+
+MX (Mail Exchange):
+
+bash
+nslookup -type=mx example.com
+
+SOA (Start of Authority):
+
+    bash
+    nslookup -type=soa example.com
+
+Query a Specific DNS Server:
+You can specify which DNS server to query:
+
+bash
+nslookup example.com 8.8.8.8
+
+This will perform the lookup using Google’s DNS server (8.8.8.8).
+
+Get All Available DNS Records for a Domain:
+
+    bash
+    nslookup -type=any example.com
+
+Useful for:
+
+    Troubleshooting network and DNS issues
+
+    Verifying DNS configuration and propagation
+
+    Checking email (MX) server settings
+
+    Investigating domain ownership and server assignments
+
