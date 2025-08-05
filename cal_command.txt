@@ -1,0 +1,51 @@
+===========================
+
+CAL command
+
+==========================
+
+
+In Linux, the cal command is used to display a calendar in the terminal.
+Basic Syntax
+
+cal [month] [year]
+
+Examples
+
+    Show the current month’s calendar
+
+cal
+
+Output:
+
+    August 2025
+Su Mo Tu We Th Fr Sa
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+
+    Show a specific month
+
+cal 5 2024
+
+This shows May 2024.
+
+    Show a whole year’s calendar
+
+cal 2025
+
+This displays all months for 2025.
+
+    Highlight today’s date
+    If your terminal supports it, the current day will be highlighted automatically when you run cal.
+
+    See previous, current, and next month together
+
+cal -3
+
+    Show Monday as the first day of the week
+
+cal --monday
