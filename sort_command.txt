@@ -1,0 +1,68 @@
+1. What It Does
+
+The sort command sorts lines of text in a file or from input (alphabetically, numerically, or by other rules).
+2. Syntax
+
+sort [OPTIONS] [FILE]
+
+If you don’t give a file name, it reads from standard input (keyboard or another command’s output).
+3. Common Examples
+Command	What It Does	Example Output
+sort file.txt	Sorts text alphabetically (A → Z)	Apple Banana Mango
+sort -r file.txt	Sorts in reverse (Z → A)	Mango Banana Apple
+sort -n numbers.txt	Sorts numerically	1 5 12 100
+sort -nr numbers.txt	Sorts numerically in reverse	100 12 5 1
+sort -u file.txt	Removes duplicates while sorting	Apple Banana Mango
+sort -k 2 file.txt	Sorts by second column	Depends on data
+sort -t "," -k 3 file.csv	Sorts CSV file by third column using comma as delimiter	—
+4. Real Examples
+
+Example file names.txt
+
+Zebra
+Lion
+Elephant
+Tiger
+Cat
+
+Sort alphabetically
+
+sort names.txt
+
+Output:
+
+Cat
+Elephant
+Lion
+Tiger
+Zebra
+
+Sort in reverse
+
+sort -r names.txt
+
+Output:
+
+Zebra
+Tiger
+Lion
+Elephant
+Cat
+
+Example file marks.txt
+
+Mahesh 80
+Amit 95
+Priya 76
+Kiran 88
+
+Sort by marks (column 2)
+
+sort -k 2 -n marks.txt
+
+Output:
+
+Priya 76
+Mahesh 80
+Kiran 88
+Amit 95
