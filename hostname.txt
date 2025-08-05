@@ -1,0 +1,41 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+HOST_NAME
+
+==================================================
+
+
+
+Hostname will be stored in the files
+
+=============================
+
+
+cat /etc/hostname
+
+==========================
+
+
+
+
+hostnamectl ------------------------->find the hostname command
+
+
+=======================
+
+change the hostname path
+======================
+
+sudo hostnamectl set-hostname my_centos7
+
+==========================
+
+showing on hostname
+
+===================
+
+exec bash
+
+=============
+
+cat /etc/hosts  ------------------------>showing hostnems with IP Adddress 
