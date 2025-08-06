@@ -1,0 +1,63 @@
+Why ss is preferred over netstat
+
+    Faster: Pulls info directly from kernel space without parsing /proc.
+
+    More detailed: Shows advanced TCP, UDP, and raw socket info.
+
+    Actively maintained: netstat is considered obsolete.
+
+Basic Syntax
+
+ss [options]
+
+Common Use Cases & Examples
+Command	Meaning
+ss	Shows all open sockets (both listening and established).
+ss -t	Shows TCP sockets only.
+ss -u	Shows UDP sockets only.
+ss -l	Shows listening sockets only.
+ss -lt	Shows listening TCP sockets.
+ss -lu	Shows listening UDP sockets.
+ss -s	Shows socket summary/statistics.
+ss -tp	Shows TCP sockets with process info (PID/program name).
+ss -tn	Shows TCP sockets with numeric addresses (no DNS resolution).
+ss -tna	Shows all TCP sockets (listening + established) in numeric format.
+Example Output
+
+$ ss -tna
+State      Recv-Q Send-Q   Local Address:Port     Peer Address:Port  
+LISTEN     0      128      127.0.0.1:3306         0.0.0.0:*      
+ESTAB      0      0        192.168.1.10:45678     93.184.216.34:443
+
+    State: LISTEN, ESTAB (established), CLOSE-WAIT, etc.
+
+    Recv-Q / Send-Q: Amount of data queued for receiving/sending.
+
+    Local Address:Port: Where connection originates.
+
+    Peer Address:Port: Destination address.
+
+Practical Usage Examples
+
+    Check if MySQL is listening:
+
+ss -ltn sport = :3306
+
+Find processes using port 8080:
+
+ss -ltnp sport = :8080
+
+Show only established connections to a host:
+
+ss -tn dst 192.168.1.100
+
+Summary of all sockets:
+
+    ss -s
+
+💡 Pro Tip: You can filter results in ss just like in SQL style.
+Example:
+
+ss -t state established '( sport = :80 or sport = :443 )'
+
+Shows only TCP connections that are established on HTTP/HTTPS ports.
